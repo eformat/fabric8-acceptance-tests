@@ -66,8 +66,7 @@ public class Fabric8Console extends PageObject {
 
     public void open_login_page() {
         String url = System.getProperty("url", "http://fabric8.vagrant.f8");
-        this.setDefaultBaseUrl(url);
-        this.open();
+        this.getDriver().get(url);
     }
 
     @Step("Given a user is logged in")
@@ -76,7 +75,7 @@ public class Fabric8Console extends PageObject {
         find(By.id("inputUsername")).sendKeys(user);
         find(By.id("inputPassword")).sendKeys(password,Keys.ENTER);
 
-        new WebDriverWait(this.getDriver(), 5).until(titleContains("fabric8-console"));
+        new WebDriverWait(this.getDriver(), 5).until(titleContains("OpenShift Web Console"));
     }
 
     @Step("Given the CD pipeline app is running")

@@ -33,17 +33,15 @@ public class Fabric8ConsoleTest {
     @Steps
     Fabric8Console console;
 
-//    @Test
-//    public void loginTest() {
-//        console.open_login_page();
-//
-//        console.log_in("admin", "admin");
-//
-//    }
-
     @Test
+    public void loginTest() {
+        console.open_login_page();
+        console.log_in("developer", "developer");
+    }
+    
+/*    @Test
     public void testCreateCamelCDIProjectFromArchetype() throws Exception {
         console.CD_pipeline_is_running();
         console.create_camel_CDI_project();
-    }
+    }*/
 }
